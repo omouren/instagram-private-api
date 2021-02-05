@@ -488,6 +488,7 @@ export class PublishService extends Repository {
       title: options.title,
       caption: options.caption,
       igtv_share_preview_to_feed: options.igtv_share_preview_to_feed,
+      length: 0
     };
 
     for (let i = 0; i < 6; i++) {
