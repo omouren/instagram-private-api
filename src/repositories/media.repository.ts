@@ -30,6 +30,7 @@ import { MediaRepositoryConfigureResponseRootObject } from '../responses';
 import Chance = require('chance');
 import { MediaRepositoryCheckOffensiveCommentResponseRootObject } from '../responses';
 import { StoryMusicQuestionResponse, StoryTextQuestionResponse } from '../types/story-response.options';
+import { IgResponseError } from "../errors";
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -598,6 +599,7 @@ export class MediaRepository extends Repository {
     });
     const retryContext = options.retryContext;
     delete form.retryContext;
+
     const { body } = await this.client.request.send({
       url: '/api/v1/media/configure_to_igtv/',
       method: 'POST',
@@ -615,6 +617,7 @@ export class MediaRepository extends Repository {
         _uuid: this.client.state.uuid,
       }),
     });
+
     return body;
   }
 
