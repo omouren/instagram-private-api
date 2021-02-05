@@ -30,7 +30,6 @@ import { MediaRepositoryConfigureResponseRootObject } from '../responses';
 import Chance = require('chance');
 import { MediaRepositoryCheckOffensiveCommentResponseRootObject } from '../responses';
 import { StoryMusicQuestionResponse, StoryTextQuestionResponse } from '../types/story-response.options';
-import { IgResponseError } from "../errors";
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
